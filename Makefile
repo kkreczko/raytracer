@@ -10,4 +10,9 @@ build-dbg:
 
 clean:
 	@rm -rf ./output/*
+	@rm -rf ./images/*
 	@echo "Clean finished"
+
+run:
+	@./output/raytracer > ./images/image.ppm
+	@echo "Image generated"

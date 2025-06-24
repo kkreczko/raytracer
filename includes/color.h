@@ -4,4 +4,8 @@
 #include <iostream>
 #include "vec3.h"
 
+using color = Vector_3D;
+
+
+
 #endif // !COLOR_H
