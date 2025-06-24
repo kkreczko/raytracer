@@ -69,6 +69,64 @@ inline Vector_3D operator+(const Vector_3D& u, const Vector_3D& v)
   );
 }
 
-// TODO v-u, v*u, t*v, v*t, v/t, dot, cross, unit 
+inline Vector_3D operator-(const Vector_3D& u, const Vector_3D& v)
+{
+  return Vector_3D(
+      u.m_Cords[0] - v.m_Cords[0],
+      u.m_Cords[1] - v.m_Cords[1],
+      u.m_Cords[2] - v.m_Cords[2]
+  );
+}
+
+inline Vector_3D operator*(const Vector_3D& u, const Vector_3D& v)
+{
+  return Vector_3D(
+      u.m_Cords[0] * v.m_Cords[0],
+      u.m_Cords[1] * v.m_Cords[1],
+      u.m_Cords[2] * v.m_Cords[2]
+  );
+}
+
+inline Vector_3D operator*(double t, const Vector_3D& v)
+{
+  return Vector_3D(
+      v.m_Cords[0] * t,
+      v.m_Cords[1] * t,
+      v.m_Cords[2] * t
+  );
+}
+
+inline Vector_3D operator*(const Vector_3D& v, double t)
+{
+  return t * v;
+}
+
+inline Vector_3D operator/(const Vector_3D& v, double t)
+{
+  return 1 / t * v;
+}
+
+inline double dot(const Vector_3D& v, const Vector_3D& u)
+{
+  return (
+      u.m_Cords[0] * v.m_Cords[0] +
+      u.m_Cords[1] * v.m_Cords[1] +
+      u.m_Cords[2] * v.m_Cords[2]
+  );
+}
+
+inline Vector_3D cross(const Vector_3D& v, const Vector_3D& u)
+{
+    return Vector_3D(
+        u.m_Cords[1] * v.m_Cords[2] - u.m_Cords[2] * v.m_Cords[1],
+        u.m_Cords[2] * v.m_Cords[0] - u.m_Cords[0] * v.m_Cords[2],
+        u.m_Cords[0] * v.m_Cords[1] - u.m_Cords[1] * v.m_Cords[0]
+    );
+}
+
+inline Vector_3D unitVector(const Vector_3D& v)
+{
+  return v / v.length();
+}
 
 #endif // !VEC3_H
