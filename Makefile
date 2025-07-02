@@ -14,5 +14,6 @@ clean:
 	@echo "Clean finished"
 
 run:
+	@mkdir -p ./images
 	@./output/raytracer > ./images/image.ppm
 	@echo "Image generated"

@@ -15,7 +15,7 @@ int main()
     for (int i = 0; i < imageWidth; i++)
     {
       auto pixelColor = color(
-        double(i) / (imageWidth - 1),
+        double(j) / (imageWidth - 1),
         double(j) / (imageHeight - 1),
         0
       );
