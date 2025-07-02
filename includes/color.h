@@ -4,9 +4,9 @@
 #include <iostream>
 #include "vec3.h"
 
-using color = Vector_3D;
+using Color = Vector_3D;
 
-void writeColor(std::ostream& out, const color& pixelColor)
+void writeColor(std::ostream& out, const Color& pixelColor)
 {
   double r = pixelColor.getX();
   double g = pixelColor.getY();

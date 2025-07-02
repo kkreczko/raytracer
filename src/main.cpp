@@ -14,7 +14,7 @@ int main()
     std::clog << "\rScanlines remaining: " << (imageHeight - j) << ' ' << std::flush;
     for (int i = 0; i < imageWidth; i++)
     {
-      auto pixelColor = color(
+      auto pixelColor = Color(
         double(j) / (imageWidth - 1),
         double(j) / (imageHeight - 1),
         0
